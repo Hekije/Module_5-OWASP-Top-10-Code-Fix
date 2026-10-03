@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Software Integrity Example
+    </title>
+
+</head>
+
+<body>
+
+    <h1>
+        OWASP Software and Data Integrity Failures
+    </h1>
+
+    <p>
+        Third-party scripts should be version-pinned
+        and verified before execution.
+    </p>
+
+
+    <!--
+        SECURE APPROACH:
+
+        Use Subresource Integrity (SRI) when loading
+        trusted third-party JavaScript.
+
+        IMPORTANT:
+        The integrity hash below is a placeholder because
+        cdn.example.com is a fictional domain.
+
+        A real application must use the exact integrity
+        hash for the trusted library file.
+    -->
+
+    <script src="https://cdn.example.com/lib-1.2.3.min.js" integrity="sha384-REPLACE_WITH_REAL_LIBRARY_HASH"
+        crossorigin="anonymous">
+        </script>
+
+
+    <!--
+        Another secure approach is hosting a reviewed,
+        version pinned dependency locally.
+
+        Example:
+
+        <script
+            src="/static/vendor/lib-1.2.3.min.js">
+        </script>
+    -->
+
+</body>
+
+</html>
